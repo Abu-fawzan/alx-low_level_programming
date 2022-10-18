@@ -9,20 +9,21 @@ int main(void)
 {
 	int c, i;
 
-	for (c = '0'; c <= '9'; c++)
+	for (c = 48; c < 58; c++)
 	{
-		for (i = '0'; i <= '9'; i++)
+		for (i = 48; i < 58; i++)
 		{
-			if (c < 1)
+			if (c != i && c < i)
 			{
 				putchar(c);
 				putchar(i);
-
-				if (c != '8' || (c == '8' && i != '9'))
+				if (c == 57 && i == 56)
 				{
-					putchar(',');
-					putchar(' ');
+					break
+						;
 				}
+				putchar(',');
+				putchar(' ');
 			}
 		}
 	}
